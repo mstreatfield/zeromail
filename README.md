@@ -66,18 +66,18 @@ I am reasonably confident of using some combination of regular expressions to id
 
 1. A common string in the dump is a header inserted by the mail client, an example is given below.  Although this appears in a couple of different forms, it gives us a name and an email address.  This forms the starting point of our contact details (although this might be cheating a bit as it doesn't come from the signature), but as we know the signature will appear after (or at least contain) the authors name, I can use the name as an identifier when parsing the text to find potential sites for the signatue.
 
-    On Jun 15, 9:06 am, Rob James <james....@gmail.com> wrote:
-    On Wed, Jun 15, 2011 at 10:40 PM, Aymeric Gaurat-Apelli <aymeric@gaurat.net>wrote:
+        On Jun 15, 9:06 am, Rob James <james....@gmail.com> wrote:
+        On Wed, Jun 15, 2011 at 10:40 PM, Aymeric Gaurat-Apelli <aymeric@gaurat.net>wrote:
 
 2. As the signature appears at the end of an email, we need to find where the email ends.  Using the threading might help, but more useful might be to look for typical 'signoff' words, such as "Thanks" or "Regards".  As these normally indicate the end of the email, there is a high chance they are followed by a signature.  From a quick glance at the dump, examples of diffeerent signoffs include:
 
-    Regards
-    Cheers
-    Thanks
-    Kind Regards
-    rgds
-    Best regards
-    Many thanks
+        Regards
+        Cheers
+        Thanks
+        Kind Regards
+        rgds
+        Best regards
+        Many thanks
 
 Output
 ------
