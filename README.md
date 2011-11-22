@@ -8,6 +8,26 @@ About
 
 This repository contains my humble attempt at solving this problem.  However, I thought I'd also use it as a bit of a learning excerise, so being new to [git][2], [github][3] and Python's [setuptools/distutils][4] I have used it as an opportunity to familiarise myself with these technologies/tools.
 
+Installation
+------------
+
+After downloading, installation is the same as most python packages, just run the setup script:
+
+    python setup.py build
+    sudo python setup.py install
+
+Just make sure you have the [vObject][10] dependency installed.
+
+Usage
+-----
+
+Run the script like so:
+
+    extract -f /path/to/file/emails.txt -d dict
+    extract -f /path/to/file/emails.txt -d vcard
+
+Currently, all details are dumped to stdout.
+
 The Problem
 -----------
 
@@ -83,6 +103,15 @@ Output
 ------
 
 The problem doesn't require the output to be in a particular format.  As we are collecting contact details, for fun (and maybe profit?) we'll output them in the vCard format (v3.0) using [vObject][10], a third party python module.
+
+Still To Do
+-----------
+
+There are a couple of things missing that still need a little work...
+
+1. [vObject][10] sucks a little so the resulting cards are not necessarily conformant!  For example, twitter and skype details are stuffed under email.
+2. The parsing doesn't look for addresses at all.  There are a couple floating around so would be good to pick those out.
+3. The code could be optimised a little - not very efficient at present.
 
 A Note on Privacy
 -----------------
